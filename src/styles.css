@@ -116,3 +116,10 @@ li {
 .btn {
   font-size: 12px;
 }
+
+.footer {
+  font-family: monospace;
+  font-weight: lighter;
+  font-size: small;
+  margin-top: 25px;
+}
