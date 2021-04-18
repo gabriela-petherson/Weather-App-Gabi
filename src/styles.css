@@ -123,6 +123,10 @@ li {
 .units .active:hover {
   text-decoration: none;
 }
+.bottomForecast {
+  margin-top: 10px;
+}
+
 .search-form {
   margin-bottom: 20px;
 }
@@ -139,6 +143,6 @@ li {
 .footer {
   font-family: monospace;
   font-weight: lighter;
-  font-size: small;
+  font-size: 10px;
   margin-top: 25px;
 }
