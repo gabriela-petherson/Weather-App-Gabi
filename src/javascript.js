@@ -21,17 +21,24 @@ todayDate.innerHTML = `${
 
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
+  console.log(response.data);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
+  iconElement.setAttribute("alt", `response.data.weather[0].main;`);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#situation").innerHTML =
     response.data.weather[0].main;
+  document.querySelector(
+    "#windSpeed"
+  ).innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `Humidity: ${response.data.wind.speed} %`;
 }
 
 function searchCity(city) {
