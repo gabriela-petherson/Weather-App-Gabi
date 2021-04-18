@@ -18,12 +18,6 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <! -- FIRST ROW (12) -->
-        <div class="row">
-          <div class="col-12">
-            <h1>Forecast today for... <br /></h1>
-          </div>
-        </div>
         <! -- SECOND ROW (12) -->
         <form class="search-form" id="search-form">
           <div class="row">
@@ -41,17 +35,17 @@
               <input
                 type="submit"
                 value="Search"
-                class="form-control btn btn-primary shadow-sm"
+                class="form-control btn btn-primary shadow-sm w-85 h-100"
                 id="search-city"
               />
             </div>
             <div class="col-3">
               <button
                 type="button"
-                class="btn btn-info w-100"
+                class="btn btn-primary shadow-sm w-80 h-80"
                 id="location-button"
               >
-                Location 📍
+                📌
               </button>
             </div>
           </div>
@@ -84,6 +78,14 @@
                   </span>
                 </div>
               </div>
+              <ul class="bottomForecast">
+                <li id="windSpeed">Wind speed: X km/h</li>
+                <li id="precipitation">Precipitation: 60%</li>
+                <li id="humidity">Humidity: 40%</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <! -- FORECAST FOR OTHER DAYS -->
             </div>
           </div>
         </div>
