@@ -68,6 +68,7 @@ function getForecast(coordinates) {
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
   console.log(response.data);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -85,6 +86,19 @@ function displayWeather(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.wind.speed} %`;
+
+  let situationElement = response.data.weather[0].description;
+  console.log(situationElement);
+  let adviceElement = document.querySelector("#adviceText");
+  if (
+    situationElement == "rain" ||
+    situationElement == "shower rain" ||
+    situationElement == "thunderstorm"
+  ) {
+    adviceElement.innerHTML = "Take your umbrella!☔";
+  } else {
+    adviceElement.innerHTML = "No umbrella needed for now!😉!";
+  }
 
   getForecast(response.data.coord);
 }
