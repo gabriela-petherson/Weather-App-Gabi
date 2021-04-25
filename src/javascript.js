@@ -19,7 +19,8 @@ todayDate.innerHTML = `${
   days[now.getDay()]
 }, ${now.getHours()}:${now.getMinutes()}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu"];
@@ -44,6 +45,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `a6ecfc60d56decea519885f1b97d34fd`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
   console.log(response.data);
@@ -64,6 +72,8 @@ function displayWeather(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.wind.speed} %`;
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -121,4 +131,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("São Paulo");
-displayForecast();
