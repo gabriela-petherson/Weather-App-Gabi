@@ -166,9 +166,10 @@ li {
   margin-top: 55px;
   border: blue;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .adviceTitle {
   color: #17a2b8;
+  font-size: 20px;
 }

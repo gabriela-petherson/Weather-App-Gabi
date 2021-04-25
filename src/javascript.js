@@ -97,7 +97,7 @@ function displayWeather(response) {
   ) {
     adviceElement.innerHTML = "Take your umbrella!☔";
   } else {
-    adviceElement.innerHTML = "No umbrella needed for now!😉!";
+    adviceElement.innerHTML = "No umbrella needed for now!😉";
   }
 
   getForecast(response.data.coord);
