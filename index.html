@@ -35,14 +35,14 @@
               <input
                 type="submit"
                 value="Search"
-                class="form-control btn btn-primary shadow-sm w-85 h-100"
+                class="form-control btn btn-primary rounded-pill bg-info shadow-sm w-85 h-100"
                 id="search-city"
               />
             </div>
             <div class="col-3">
               <button
                 type="button"
-                class="btn btn-primary shadow-sm w-80 h-80"
+                class="btn btn-primary rounded-pill bg-info shadow-sm w-80 h-80"
                 id="location-button"
               >
                 📌
@@ -50,9 +50,6 @@
             </div>
           </div>
         </form>
-        <div class="alert alert-light" role="alert">
-          <b>Advice: </b>Take your umbrella!
-        </div>
         <! -- THIRD ROW (12) -->
         <div class="today">
           <div class="row">
@@ -84,8 +81,15 @@
                 <li id="humidity">Humidity: 40%</li>
               </ul>
             </div>
+            <div class="col-6">
+              <div class="alert alert-light" role="alert" id="advice">
+                <div class="adviceTitle"><b>ADVICE: </b></div>
+                <div>Take your umbrella!</div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="week-forecast" id="forecast">
           <div class="row">
             <div class="col-2">
