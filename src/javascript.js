@@ -19,6 +19,31 @@ todayDate.innerHTML = `${
   days[now.getDay()]
 }, ${now.getHours()}:${now.getMinutes()}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+              <div class="week-forecast-date">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/01n@2x.png"
+                alt="ball"
+                width="60px"
+              />
+              <div class="week-forecast-temperature">
+                <span class="week-forecast-temperature-max">18º</span>
+                <span class="week-forecast-temperature-min">12º</span>
+              </div>
+            </div>  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
   console.log(response.data);
@@ -96,3 +121,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("São Paulo");
+displayForecast();
